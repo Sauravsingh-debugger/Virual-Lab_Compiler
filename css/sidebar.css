@@ -1,0 +1,168 @@
+
+.navigator{
+    background: rgba(142, 171, 224, 1);
+}
+
+.sidebar{
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.sidebar a{
+    text-decoration: none;
+}
+
+.single1{
+    color: white;
+    font-weight: 400;
+    cursor: pointer;
+    border-top: 1.5px solid white;
+}
+
+.hover1{
+    color: rgba(142, 171, 224, 1);
+    background-color: white;
+}
+
+.quiz-container,.end-exam{
+    display: none;
+}
+
+.q{
+    width: 720px;
+    height: 360px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 2px;
+}
+
+.form-check{
+    height: 34px;
+}
+
+.question{
+    background: rgba(142, 171, 224, 1);
+    height: 61px;
+    color: white;
+}
+
+.options{
+    height: calc(360px - 61px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#prev{
+    background-color: rgba(227, 237, 255, 1);
+    width: 100px;
+    height: 43px;
+}
+.main-1{
+    height: calc(100vh - 56px);
+}
+
+#next{
+    background-color: rgba(142, 171, 224, 1);
+    width: 100px;
+    height: 43px;
+    color: white;
+}
+
+#next:hover,#prev:hover{
+    transform: scale(1.1);
+}
+
+#submit{
+    background-color: rgba(142, 224, 165, 1);
+    width: 100px;
+    height: 43px;
+    color: white;
+}
+#submit:hover,#exam:hover{
+    background-color: rgb(90, 234, 131);
+    transform: scale(1.1);
+}
+.btns{
+    width: 720px;
+}
+
+#exam{
+    background-color: rgba(142, 224, 165, 1);
+    width: 100px;
+    color: white;
+}
+textarea{
+    outline: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #666666;
+}
+.text-area-container{
+    height: 400px;
+    border:2px solid #8EABE0;
+    border-radius: 25px;
+}
+.main-area-container{
+    height: 400px;
+}
+.btn-green{
+    background-color: #8EE0A5 ; 
+    border:none;
+     height: 33px;
+      color: white;
+}
+.lex-table{
+   
+}
+.lex-row{
+    border-bottom: 1px solid  #8EABE0;
+    padding: 0;
+}
+.lex-name{
+    background: #D3E1FC;
+     color: #666666;
+     display: flex;
+     align-items: center;
+     height: 100%;
+}
+.badge{
+    margin-left: 1px;
+}
+
+.clock{
+    color: #8EABE0;
+    font-size: large;
+    font-weight: bold;
+}
+
+.aim > h1{
+    color: #8EABE0;
+}
+
+.aim > p{
+    font-size:large;
+}
+
+
+.theory > h1{
+    color: #8EABE0;
+}
+
+.theory > p{
+    font-size:x-large;
+}
+
+.procedure > h1{
+    color: #8EABE0;
+}
+
+.procedure > ul> li{
+    font-size: x-large;
+}
+.text-area-container-2{
+    height: 200px;
+    border:2px solid #8EABE0;
+    border-radius: 25px;
+}

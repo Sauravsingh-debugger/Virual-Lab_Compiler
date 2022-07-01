@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulation</title>
+    <link rel="stylesheet" href="../../css/sidebar.css">
+    <link rel="stylesheet" href="exp4.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./exp4.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark " style="background: #8EABE0;">
+        <div class="container-fluid">
+        
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold" >
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item"></li>
+                <a class="nav-link active" aria-current="page" href="#">About</a>
+              </li>
+              <li class="nav-item"></li>
+                <a class="nav-link active" aria-current="page" href="#">Help</a>
+              </li>      
+            </ul>
+          </div>
+        </div>
+      </div>  
+    </nav>
+    <div class="row gx-0 main-1">
+        <div class="col-md-2 navigator">
+            <ul class="sidebar">
+              <li class="single1 p-2"><a href="./index.html"><i class="fa fa-files-o text-white"></i><span class="ms-2 text-white">Aim</span></a></li>
+              <li class="single1 p-2"><a href="./theory.html"><i class="fa fa-files-o text-white"></i><span class="ms-2 text-white">Theory</span></a></li>
+              <li class="single1 p-2"><a href="./preTest.html"><i class="fa fa-files-o text-white"></i><span class="ms-2 text-white">Test</span></a></li>
+              <li class="single1 p-2"><a href="./procedure.html"><i class="fa fa-files-o text-white"></i><span class="ms-2 text-white">Procedure</span></a></li>
+              <li class="single1 p-2 hover1 text-nowrap"><a href="./simulation.html"><i class="fa fa-files-o"></i><span class="ms-2">Simulation</span></a></li>
+              <li class="single1 p-2"><a href="./reference.html"><i class="fa fa-files-o text-white"></i><span class="ms-2 text-white">Reference</span></a></li>
+            </ul>
+        </div>
+        <div class="col-md-10 p-2">
+          <label>* Use '' instead of ε and use space each token with a whitespace</label><br/>
+          <label class="text-danger">*For now our parser do not work for left recursive grammar</label>
+           <div class="row gx-0 main-1 align-items-center justify-content-center">
+            <div class="col-md-3 px-2  text-area-container " >
+              <textarea  id="txt" class="w-100" style=" height: 350px; border-radius: 25px;" name="" id="" cols="20" rows="2"></textarea>
+              <button onclick="makeTargetVisible()" class="px-3 w-100 btn-green" style="border-radius: 25px;">Generate</button>
+            </div>
+            <div class="col-md-9 px-2" >
+              <div class="container form-group shadow " style="margin-right: 20px; height: 400px;">
+              <!-- <label for="exampleFormControlTextarea1 "class="  w-100" style="align-items:center;display: flex; justify-content: center; height: 3rem;color: #666666; font-weight: 400; background: #D3E1FC;
+              ">Instruction</label> -->
+              <div class="d-flex" style="border:1px solid #D3E1FC">
+                  <div class="d-flex w-100">
+                    <label id="first" onclick="first()" style="align-items:center;display: flex; justify-content: center; height: 3rem;background: #D3E1FC; color: #666666; cursor: pointer;" class="w-100  " for="">First & Follow</label>
+                    <label id="second" onclick="second()"style="align-items:center;display: flex; justify-content: center; height: 3rem;background: #D3E1FC;color: #666666; cursor:pointer"class="w-100 mx-1 " for="">Parse Table</label>
+                    <label id="third" onclick="third()"style="align-items:center;display: flex; justify-content: center; height: 3rem;background: #D3E1FC;color: #666666;cursor:pointer"class="w-100  " for="">Parse tree</label>
+                  </div>  
+              </div>
+              <!-- <textarea class="w-100" style="height: 307px; border: 0;" id="" cols="75" rows="3"></textarea> -->
+              <div id="firstdiv" class="row p-0 m-0 justify-content-center ">
+                  <div class="first-container p-1 overflow-auto w-100">
+                    <table class="table  table-bordered" id="tbl" >
+                        <thead class="thead-dark">
+                          <tr>
+                            <th >variable</th>
+                            <th >First</th>
+                            <th >Follow</th>
+                          </tr>
+                        </thead>
+                        <tbody id="first-follow-id">
+
+                        </tbody>
+                      
+                    </table>
+                  </div>
+              </div>
+              <div id="seconddiv" class="row gx-0 align-items-center p-1">
+                <table class="table table-bordered"  id="tb2">
+
+                </table>
+              </div>
+              <div id="thirddiv" class="overflow-auto">
+                <div id="thirddivcon">
+                  <div class="d-flex align-items-center" >
+                    <input id="tkn" placeholder="Whitespace seperated tokens" style="border-radius: 25px; border:2px solid #8EABE0;  margin: 20px; width: 250px;height: 40px" name="" id="" rows="2"></input>
+                    <button onclick="generate()" class="px-3 btn-green">Generate</button>
+                  </div>
+                </div>
+                <canvas id="myCanvas" width="800" height="800" style="border:1px solid #d3d3d3;"></canvas>
+              </div>
+              </div>
+              </div>
+           </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+          $("#firstdiv").show();
+           $("#seconddiv").hide();
+           $("#thirddiv").hide();
+           $('#first').css("background-color","#8EABE0")
+        })
+
+        function first(){
+          $('#first').css("background-color","#8EABE0")
+          $('#second').css("background-color","#D3E1FC")
+          $('#third').css("background-color","#D3E1FC")
+          $("#firstdiv").show();
+           $("#seconddiv").hide();
+           $("#thirddiv").hide();
+        }
+        const second=()=>{
+            $('#second').css("background-color","#8EABE0")
+            $('#third').css("background-color","#D3E1FC")
+            $('#first').css("background-color","#D3E1FC")
+            $("#firstdiv").hide();
+           $("#seconddiv").show();
+           $("#thirddiv").hide();
+            
+            
+        }
+        const third=()=>{
+            $('#third').css("background-color","#8EABE0")
+            $('#second').css("background-color","#D3E1FC")
+            $('#first').css("background-color","#D3E1FC")
+           
+            $("#firstdiv").hide();
+           $("#seconddiv").hide();
+           $("#thirddiv").show();
+        }
+    </script>
+</body>
+</html>

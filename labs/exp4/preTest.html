@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <link rel="stylesheet" href="../../css/sidebar.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark " style="background: #8EABE0;">
+        <div class="container-fluid">
+        
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold" >
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item"></li>
+                <a class="nav-link active" aria-current="page" href="#">About</a>
+              </li>
+              <li class="nav-item"></li>
+                <a class="nav-link active" aria-current="page" href="#">Help</a>
+              </li>      
+            </ul>
+          </div>
+        </div>
+      </div>  
+    </nav>
+    <div class="row gx-0 main-1">
+        <div class="col-md-2 navigator">
+            <ul class="sidebar">
+              <li class="single1 p-2"><a href="./index.html"><i class="fa fa-files-o text-white"></i><span class="ms-2 text-white">Aim</span></a></li>
+              <li class="single1 p-2"><a href="./theory.html"><i class="fa fa-files-o text-white"></i><span class="ms-2 text-white">Theory</span></a></li>
+              <li class="single1 p-2 hover1"><a href="./preTest.html"><i class="fa fa-files-o"></i><span class="ms-2">Test</span></a></li>
+              <li class="single1 p-2"><a href="./procedure.html"><i class="fa fa-files-o text-white"></i><span class="ms-2 text-white">Procedure</span></a></li>
+              <li class="single1 p-2 text-nowrap"><a href="./simulation.html"><i class="fa fa-files-o text-white"></i><span class="ms-2 text-white">Simulation</span></a></li>
+              <li class="single1 p-2"><a href="./reference.html"><i class="fa fa-files-o text-white"></i><span class="ms-2 text-white">Reference</span></a></li>
+            </ul>
+        </div>
+        <div class="col-md-10 d-flex align-items-center justify-content-center">
+          <div class="start-exam">
+            <div class="w-100 h-100 d-flex align-items-center justify-content-center">
+              <button onclick="exam()" id="exam" class="btn">Start Exam</button>
+            </div>
+          </div>
+          <div class="end-exam">
+            <div class="w-100 h-100 d-flex align-items-center justify-content-center">
+              <h5>Thank You</h5>
+            </div>
+            <div class="w-100 h-100 d-flex align-items-center justify-content-center">
+              <h5 id="score"></h5>
+            </div>
+          </div>
+          <div class="quiz-container py-5">
+            <div class="w-100 d-flex"><span class="ms-auto clock"></span></div>
+
+            <div id="wrapper" class="mt-5 wrapper w-100 d-flex align-items-center flex-column">
+              <div id="q1" class="q mx-auto">
+                <div class="question d-flex align-items-center"><h5 class="ms-3">1. Which of the following statements is false?</h5></div>
+                <div class="options px-3">
+                  <div class="form-check d-flex align-items-center">
+                    <input  class="form-check-input" type="radio" name="flexRadioDefault_1" id="flexRadioDefault_1_1">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_1_1">
+                      Unambiguous grammar has both kind of derivations
+                    </label>
+                  </div>
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_1" id="flexRadioDefault_1_2">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_1_2">
+                      An LL(1) parser is a top-down parser
+                    </label>
+                  </div>
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_1" id="flexRadioDefault_1_3">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_1_3">
+                      LALR is more powerful than SLR
+                    </label>
+                  </div>
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_1" id="flexRadioDefault_1_4">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_1_4">
+                      Ambiguous grammar can’t be LR(k)
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div id="q2" class="q mx-auto">
+                <div class="question d-flex align-items-center"><h5 class="ms-3">2. Which one of the following is true at any valid state in shift-reduce parsing?</h5></div>
+                <div class="options px-3">
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_2" id="flexRadioDefault_2_1">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_2_1">
+                      At the bottom we find the prefixes
+                    </label>
+                  </div>
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_2" id="flexRadioDefault_2_2">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_2_2">
+                      None of the mentioned
+                    </label>
+                  </div>
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_2" id="flexRadioDefault_2_3">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_2_3">
+                      Stack contains only viable prefixes
+                    </label>
+                  </div>
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="2" id="flexRadioDefault_2_4">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_2_4">
+                      Stack consists of viable prefixes
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div id="q3" class="q mx-auto">
+                <div class="question d-flex align-items-center"><h5 class="ms-3">3. In the context of abstract-syntax-tree and control-flow-graph. Which one of the following is true?</h5></div>
+                <div class="options px-3">
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_3" id="flexRadioDefault_3_1">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_3_1">
+                      In both AST and CFG if node N2 be the successor of node N1
+                    </label>
+                  </div>
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_3" id="flexRadioDefault_3_2">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_3_2">
+                      For any input program, neither AST nor CFG will contain a cycle
+                    </label>
+                  </div>
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_3" id="flexRadioDefault_3_3">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_3_3">
+                      The max number of successors of a node in an AST and a CFG depends on the input program
+                    </label>
+                  </div>
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_3" id="flexRadioDefault_3_4">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_3_4">
+                      None of the mentioned
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div id="q4" class="q mx-auto">
+                <div class="question d-flex align-items-center"><h5 class="ms-3">4. Which of the following pairs is the most powerful?</h5></div>
+                <div class="options px-3">
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_4" id="flexRadioDefault_4_1">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_4_1">
+                      SLR, LALR
+                    </label>
+                  </div>
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_4" id="flexRadioDefault_4_2">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_4_2">
+                      Canonical LR ,LALR
+                    </label>
+                  </div>
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_4" id="flexRadioDefault_4_3">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_4_3">
+                      SLR canonical LR
+                    </label>
+                  </div>
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_4" id="flexRadioDefault_4_4">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_4_4">
+                      LALR canonical LR
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div id="q5" class="q mx-auto">
+                <div class="question d-flex align-items-center"><h5 class="ms-3">5. A bottom up parser generates __________ </h5></div>
+                <div class="options px-3">
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_5" id="flexRadioDefault_5_1">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_5_1">
+                      Right most derivation
+                    </label>
+                  </div>
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_5" id="flexRadioDefault_5_2">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_5_2">
+                      Rightmost derivation in reverse
+                    </label>
+                  </div>
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_5" id="flexRadioDefault_5_3">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_5_3">
+                      Leftmost derivation
+                    </label>
+                  </div>
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_5" id="flexRadioDefault_5_4">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_5_4">
+                      Leftmost derivation in reverse
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div id="q6" class="q mx-auto">
+                <div class="question d-flex align-items-center"><h5 class="ms-3">6.  Inherited attribute is a natural choice in ___________</h5></div>
+                <div class="options px-3">
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_6" id="flexRadioDefault_6_1">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_6_1">
+                      Variable declarations record is maintained
+                    </label>
+                  </div>
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_6" id="flexRadioDefault_6_2">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_6_2">
+                       L values and R values
+                    </label>
+                  </div>
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_6" id="flexRadioDefault_6_3">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_6_3">
+                      All of the mentioned
+                    </label>
+                  </div>
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_6" id="flexRadioDefault_6_4">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_6_4">
+                      None of the mentioned
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div id="q7" class="q mx-auto">
+                <div class="question d-flex align-items-center"><h5 class="ms-3">7. The action of parsing the source program into proper syntactic classes is called __________</h5></div>
+                <div class="options px-3">
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_7" id="flexRadioDefault_7_1">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_7_1">
+                      Syntax Analysis
+                    </label>
+                  </div>
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_7" id="flexRadioDefault_7_2">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_7_2">
+                      Lexical Analysis
+                    </label>
+                  </div>
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_7" id="flexRadioDefault_7_3">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_7_3">
+                      Interpretation analysis
+                    </label>
+                  </div>
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_7" id="flexRadioDefault_7_4">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_7_4">
+                      General Syntax Analysis
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div id="q8" class="q mx-auto">
+                <div class="question d-flex align-items-center"><h5 class="ms-3">8. Relocating bits used by relocating loader are specified by __________</h5></div>
+                <div class="options px-3">
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_8" id="flexRadioDefault_8_1">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_8_1">
+                      Relocating loader itself
+                    </label>
+                  </div>
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_8" id="flexRadioDefault_8_2">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_8_2">
+                      Assembler
+                    </label>
+                  </div>
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_8" id="flexRadioDefault_8_3">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_8_3">
+                      Macro Processor
+                    </label>
+                  </div>
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_8" id="flexRadioDefault_8_4">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_8_4">
+                      Linker
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div id="q9" class="q mx-auto">
+                <div class="question d-flex align-items-center"><h5 class="ms-3">9. A top down parser generates __________</h5></div>
+                <div class="options px-3">
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_9" id="flexRadioDefault_9_1">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_9_1">
+                      Rightmost Derivation
+                    </label>
+                  </div>
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_9" id="flexRadioDefault_9_2">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_9_2">
+                      Right most derivation in reverse
+                    </label>
+                  </div>
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_9" id="flexRadioDefault_9_3">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_9_3">
+                      Left most derivation
+                    </label>
+                  </div>
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_9" id="flexRadioDefault_9_4">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_9_4">
+                      Left most derivation in reverse
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div id="q10" class="q mx-auto">
+                <div class="question d-flex align-items-center"><h5 class="ms-3">10.  Running time of a program depends on __________</h5></div>
+                <div class="options px-3">
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_10" id="flexRadioDefault_10_1">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_10_1">
+                      Addressing mode
+                    </label>
+                  </div>
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_10" id="flexRadioDefault_10_2">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_10_2">
+                      Order of computations
+                    </label>
+                  </div>
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_10" id="flexRadioDefault_10_3">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_10_3">
+                      The usage of machine idioms
+                    </label>
+                  </div>
+                  <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault_10" id="flexRadioDefault_10_4">
+                    <label class="form-check-label ms-1" for="flexRadioDefault_10_4">
+                      All of the mentioned
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="btns mt-3">
+                <div class="mx-auto w-100 d-flex justify-content-end">
+                  <button onclick="prev()" id="prev" class="btn quiz_btn me-3">Previous</button>
+                  <button onclick="next()" id="next" class="btn quiz_btn">Next</button>
+                </div>
+              </div>
+            </div>
+              
+            <div class="w-100 d-flex mt-3">
+              <button onclick="end()" id="submit" class="mx-auto btn">Submit</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    
+
+    <script>
+      let count = 1;
+      let res = {};
+      let ans = [1,3,3,3,2,1,2,4,3,4];
+      let score = 0;
+      $(document).ready(()=>{
+        if(count==1){
+            $('#prev').prop("disabled","true");
+        }
+        for(let i=2;i<=10;i++){
+            $(`#q`+i).hide();
+        }
+        $(`.form-check-input`).on("change",function(){
+            let ans = $(this).attr("id").split("_");
+            res[ans[1]] = ans[2];
+          })
+      })
+
+      const end=()=>{
+        $('.quiz-container').hide();
+        $('.end-exam').show();
+
+
+        for(let i=1;i<=10;i++){
+          if(res[i]==ans[i-1]){
+            score = score+1;
+          }
+        }
+        $('#score').html(`score ${score}`);
+        console.log(score)
+      }
+
+      const exam=()=>{
+        $('.start-exam').hide();
+        $('.quiz-container').show();
+
+        var countDownDate = new Date().getTime() + 15 * 60 * 1000;
+
+        var x = setInterval(function() {
+
+          var now = new Date().getTime();
+
+          var distance = countDownDate - now;
+
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          minutes = (minutes < 10 ? "0" : "") + minutes;
+          seconds = (seconds < 10 ? "0" : "") + seconds;
+
+          $(".clock").html(minutes + ":" + seconds);
+
+          if (distance < 0) {
+            clearInterval(x);
+            end();
+            console.log("end");
+          }
+        }, 1000);
+      }
+
+      const next=()=>{
+        count += 1;
+        if(count>1){
+          $('#prev').removeAttr("disabled")
+          $('#next').removeAttr("disabled")
+        }else{
+          $('#prev').prop("disabled","true");
+        }
+
+        for(let i=1;i<count;i++){
+          $(`#q`+i).hide();
+        }
+        
+        $(`#q`+count).show();
+        
+        for(let i=count+1;i<=10;i++){
+          $(`#q`+i).hide();
+        }
+        
+        if(count==10){
+          $('#next').prop("disabled","true");
+        }
+        setValue(count);
+        
+      }
+
+      const prev=()=>{
+        count -= 1;
+        if(count==1) $('#next').removeAttr("disabled");
+        if(count>1){
+          $('#prev').removeAttr("disabled");
+        }else{
+          $('#prev').prop("disabled","true");
+        }
+        
+        for(let i=1;i<count;i++){
+          $(`#q`+i).hide();
+        }
+        
+        $(`#q`+count).show();
+        
+        for(let i=count+1;i<=10;i++){
+          $(`#q`+i).hide();
+        }
+        
+        if(count==10){
+          $('#next').prop("disabled","true");
+        } 
+        setValue(count);
+      }
+
+      const setValue = (count) =>{
+        
+      }
+    </script>
+        <div class="col-md-10">
+           pre test
+        </div>
+    </div>
+</body>
+</html>

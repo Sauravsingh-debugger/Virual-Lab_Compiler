@@ -1,0 +1,14 @@
+.gallery{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+nav{
+    height: 50px;
+}
+.button{
+    background: #8EABE0;
+    color: white;
+}

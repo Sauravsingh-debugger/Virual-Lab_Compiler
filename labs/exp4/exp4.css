@@ -1,0 +1,19 @@
+th ,td{
+    /* width: 80px;
+    height: 40px; */
+}
+/* th{
+    background: rgba(142, 171, 224, 1);
+    color: white;
+} */
+.first-container{
+    display: flex;
+    justify-content: center;
+}
+#firstdiv,#seconddiv,#thirddiv {
+    height: calc(100% - 3rem);
+    overflow: auto;
+}
+canvas{
+    display: none;
+}
